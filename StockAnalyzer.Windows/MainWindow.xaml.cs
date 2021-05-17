@@ -379,21 +379,21 @@ namespace StockAnalyzer.Windows
         #endregion
 
         #region Controlling the Continuations Execution Context
-        private async void Search_Click(object sender, RoutedEventArgs e)
-        {
-            var result = await GetStockFor(Ticker.Text);
+        //private async void Search_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var result = await GetStockFor(Ticker.Text);
 
             
-        }
-        public async Task<IEnumerable<StockPrice>> GetStockFor(string ticker)
-        {
-            var service = new StockService();
+        //}
+        //public async Task<IEnumerable<StockPrice>> GetStockFor(string ticker)
+        //{
+        //    var service = new StockService();
 
-            var stocks = await service.GetStockPricesFor(ticker, CancellationToken.None)
-                .ConfigureAwait(true);
-            Notes.Text += $"Stocks loaded!{Environment.NewLine}";
-            return stocks.Take(5);
-        }
+        //    var stocks = await service.GetStockPricesFor(ticker, CancellationToken.None)
+        //        .ConfigureAwait(true);
+        //    Notes.Text += $"Stocks loaded!{Environment.NewLine}";
+        //    return stocks.Take(5);
+        //}
         #endregion
 
         private Task<List<string>> SearchForStocks(CancellationToken cancellationToken)
